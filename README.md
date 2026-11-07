@@ -64,8 +64,9 @@ GhostRoot bypasses these limitations by using the file system as an IPC (Inter-P
 
 ### Phase 1: Preparation
 1. Download `Cli32` from the release page above, verify its SHA-256 hash, and place it inside the `/scripts` folder of this repository.
-2. Transfer the entire `/scripts` folder to your device (The default path assumed by the scripts is `/sdcard/360_W370_Ghost_root/scripts/`).
-3. Open your terminal app and ensure you have `uid=2000(shell)`.
+2. Download the repository ZIP and extract it. **Rename the extracted folder (e.g., `360-kidwatch-11X-W370-Ghostroot-main`) to exactly `360_W370_Ghost_root`**.
+3. Move the `360_W370_Ghost_root` folder to the root of your device's internal storage. (The final path MUST be `/sdcard/360_W370_Ghost_root/`).
+4. Open your terminal app and ensure you have `uid=2000(shell)`.
 
 ### Phase 2: One-Click Deployment
 Because the watch kills background apps rapidly, and `/sdcard` is mounted as `noexec`, we need to move `Cli32` to a safe directory and start the background daemon. 
@@ -240,8 +241,9 @@ GhostRoot 通过将文件系统用作 IPC（进程间通信）通道来绕过这
 
 ### 阶段一：准备工作
 1. 从上面的发布页面下载 `Cli32`，验证其 SHA-256 哈希，并将其放入本仓库的 `/scripts` 文件夹中。
-2. 将整个 `/scripts` 文件夹传输到你的设备上（脚本默认假定路径为 `/sdcard/360_W370_Ghost_root/scripts/`）。
-3. 打开你的终端应用，并确保你拥有 `uid=2000(shell)` 权限。
+2. 下载本仓库的 ZIP 压缩包并解压。**将解压出来的文件夹（如 `360-kidwatch-11X-W370-Ghostroot-main`）重命名为完全一致的 `360_W370_Ghost_root`**。
+3. 将这个 `360_W370_Ghost_root` 文件夹移动到手机内部存储的根目录（最终路径**必须**是 `/sdcard/360_W370_Ghost_root/`）。
+4. 打开你的终端应用，并确保你拥有 `uid=2000(shell)` 权限。
 
 ### 阶段二：一键部署
 由于手表会快速杀掉后台应用，且 `/sdcard` 挂载为 `noexec`（不可执行），我们需要将 `Cli32` 移动到安全的目录并启动后台守护进程。
