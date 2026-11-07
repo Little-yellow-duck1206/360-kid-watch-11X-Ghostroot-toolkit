@@ -15,6 +15,19 @@ Because the target device aggressively kills background apps and locks the /syst
 
 This repository implements GhostRoot: a file-based background daemon that survives app-killing, does not require TTY interaction, and can be revived instantly after a reboot.
 
+## Screenshots / 演示流程
+
+Here is the step-by-step demonstration of the exploit on the actual device.
+以下是该工具在真实设备上的操作演示：
+
+| Step / 步骤 | Description / 说明 | Image / 截图 |
+| :--- | :--- | :--- |
+| **1. Target Device** | 360 11X W370 (Unisoc SC8541E, Android 8.1)<br>目标设备：360 11X W370 | <img src="https://raw.githubusercontent.com/Little-yellow-duck1206/360-kidwatch-11X-W370-Ghostroot/main/images/IMG_0975.jpeg" width="300"> |
+| **2. Shizuku Active** | Shizuku is activated to provide `uid=2000(shell)`.<br>激活 Shizuku 以获取 shell 权限。 | <img src="https://raw.githubusercontent.com/Little-yellow-duck1206/360-kidwatch-11X-W370-Ghostroot/main/images/IMG_0976.jpeg" width="300"> |
+| **3. Prepare Cli32** | Place the downloaded `Cli32` binary into the `scripts` folder.<br>将下载的 Cli32 放入 scripts 文件夹。 | <img src="https://raw.githubusercontent.com/Little-yellow-duck1206/360-kidwatch-11X-W370-Ghostroot/main/images/IMG_0977.jpeg" width="300"> |
+| **4. Deploy Daemon** | Run `wake.sh` inside aShell You to trigger the root service.<br>在 aShell You 中运行 wake.sh 唤醒底层服务。 | <img src="https://raw.githubusercontent.com/Little-yellow-duck1206/360-kidwatch-11X-W370-Ghostroot/main/images/IMG_0978.jpeg" width="300"> |
+| **5. Root Access** | Execute commands as root in MT Manager.<br>在 MT 管理器中以 root 身份执行命令。 | <img src="https://raw.githubusercontent.com/Little-yellow-duck1206/360-kidwatch-11X-W370-Ghostroot/main/images/IMG_0979.jpeg" width="300"> |
+
 ## Vulnerability Mechanics & Design Trade-offs
 ### Why cmd_skt?
 In the Unisoc platform, cmd_services runs as root and listens on the cmd_skt abstract Unix socket. To prevent unauthorized access, it only accepts connections from trusted clients (e.g., com.sprd.engineermode). CVE-2025-31710 allows command injection via the engineermode component, enabling an attacker to communicate with cmd_skt and execute arbitrary commands in the context of cmd_services.
