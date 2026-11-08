@@ -9,6 +9,8 @@
 5. Execute any command as root (Note: the `sh` prefix is ALWAYS required):
    `sh /sdcard/360_W370_Ghost_root/scripts/rootcmd "id"`
 
+* **Note for Font Changer:** Running the font script will restart the UI and cause Shizuku to lose its shell privileges. You must reboot the watch and re-activate Shizuku afterwards.
+
 ## 中文
 1. 下载本仓库的 ZIP 压缩包并解压。将解压出来的文件夹重命名为 **`360_W370_Ghost_root`**。
 2. 将这个文件夹移动到手机内部存储的根目录（最终路径**必须**是 `/sdcard/360_W370_Ghost_root/`）。
@@ -17,3 +19,5 @@
    `sh /sdcard/360_W370_Ghost_root/scripts/wake.sh`
 5. 通过包装脚本以 Root 身份执行命令（执行命令时必须加上 `sh` 前缀）：
    `sh /sdcard/360_W370_Ghost_root/scripts/rootcmd "id"`
+
+* **换字体注意事项**：运行字体替换脚本刷新 UI 后，会导致 Shizuku 的 shell 权限丢失。你必须重启手表，重新激活 Shizuku，然后再恢复 Root。
