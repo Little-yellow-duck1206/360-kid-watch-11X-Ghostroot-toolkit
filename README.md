@@ -93,6 +93,9 @@ The `/tools/change_font` directory includes a script to safely replace the syste
 4. Enter the number corresponding to the font you want to apply. The UI will restart briefly.
 *(Note: English fonts are intentionally untouched to prevent missing character boxes).*
 
+* **IMPORTANT SIDE EFFECT:** Replacing the font and restarting the UI (`killall system_server`) will cause Shizuku to lose its shell (`uid=2000`) privileges. You may NOT be able to re-activate Shizuku immediately via wireless debugging. To fix this, you MUST reboot the device. After rebooting, re-activate Shizuku using the standard method, then run `wake.sh` to restore root access.
+* **重要副作用**：替换字体并刷新 UI（重启 system_server）会导致 Shizuku 的 shell 权限丢失，且可能无法立刻通过无线调试重新激活。解决方法是**重启手表**。重启后，你需要重新通过常规方法激活 Shizuku，然后再运行 `wake.sh` 恢复 Root 权限。
+
 ---
 
 ## Script Sources
@@ -216,6 +219,8 @@ If you find any errors or have any questions, please feel free to send an email 
 2. 将你的 `.ttf` 或 `.ttc` 字体文件放入 `/sdcard/360_W370_Ghost_root/tools/change_font/` 目录。
 3. 运行 `sh /sdcard/360_W370_Ghost_root/tools/change_font/font.sh` 并根据提示输入数字即可。
 *(注：不会修改英文字体，避免英文变方块。)*
+
+* **重要副作用**：替换字体并刷新 UI（重启 system_server）会导致 Shizuku 的 shell 权限丢失，且可能无法立刻通过无线调试重新激活。解决方法是**重启手表**。重启后，你需要重新通过常规方法激活 Shizuku，然后再运行 `wake.sh` 恢复 Root 权限。
 
 ---
 
